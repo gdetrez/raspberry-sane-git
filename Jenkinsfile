@@ -1,5 +1,5 @@
 pipeline {
-    agent agent { label 'scanner' }
+    agent { label 'scanner' }
     stages {
         stage('Build') {
             steps {
