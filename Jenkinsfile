@@ -1,9 +1,10 @@
 pipeline {
-    agent any
+    agent agent { label 'scanner' }
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'uname -a'
             }
         }
         stage('Test') {
