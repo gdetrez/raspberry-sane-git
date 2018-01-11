@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        docker.withRegistry('', 'phenomique-dockerhub') {
+        withDockerRegistry('', 'phenomique-dockerhub') {
           sh 'docker push phenomique/raspberry-sane-git:latest'
         }
       }
