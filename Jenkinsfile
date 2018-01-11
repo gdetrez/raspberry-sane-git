@@ -19,7 +19,7 @@ pipeline {
     stage('Push') {
       steps {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'phenomique-dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-          sh 'echo "$USERNAME"
+          sh 'echo "$USERNAME"'
           sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
         }
         sh 'docker push phenomique/raspberry-sane-git:latest'
