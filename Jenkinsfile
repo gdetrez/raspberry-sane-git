@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        withDockerRegistry('', 'phenomique-dockerhub') {
+        withDockerRegistry(registry: [credentialsId: 'phenomique-dockerhub']) {
           sh 'docker push phenomique/raspberry-sane-git:latest'
         }
       }
